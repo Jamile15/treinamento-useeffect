@@ -44,3 +44,31 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+/////////////////////////////////////////////////////////////////////
+useEffect é um hook do React que permite que você execute efeitos colaterais em componentes funcionais. Um efeito colateral é qualquer coisa que afete algo fora do escopo da função, como uma chamada de API, manipulação de DOM ou atualização de um estado global.
+
+O useEffect é executado após a renderização do componente e pode ser usado para configurar qualquer coisa que seu componente precise para funcionar corretamente. Ele recebe uma função de callback que pode retornar uma função de limpeza opcional. Essa função é executada quando o componente é desmontado ou quando um novo efeito é executado.
+
+A estrutura básica de um useEffect é a seguinte:
+
+javascript
+Copy code
+import React, { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // código do efeito colateral aqui
+    return () => {
+      // função de limpeza aqui (opcional)
+    };
+  }, [/* array de dependências */]);
+
+  return (
+    // componente aqui
+  );
+}
+O array de dependências é usado para dizer ao React quando o efeito deve ser reexecutado. Se você omitir esse array, o efeito será executado após cada renderização. Se você passar um array vazio, o efeito será executado apenas uma vez, após a primeira renderização.
+
+Em resumo, useEffect é usado para executar efeitos colaterais em componentes funcionais, como fazer chamadas de API, manipular o DOM ou atualizar um estado global. Ele é executado após a renderização do componente e pode ser usado para configurar o componente.
